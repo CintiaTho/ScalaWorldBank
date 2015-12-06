@@ -25,7 +25,6 @@
   <classpathentry kind="lib" path="/home/gcosta/.ivy2/cache/com.madgag/scala-arm_2.11/jars/scala-arm_2.11-1.3.3.jar"/>
   <classpathentry kind="lib" path="/home/gcosta/.ivy2/cache/org.scala-lang.plugins/scala-continuations-library_2.11/bundles/scala-continuations-library_2.11-1.0.1.jar"/>
   <classpathentry kind="lib" path="/home/gcosta/.ivy2/cache/com.github.scala-incubator.io/scala-io-file_2.11/jars/scala-io-file_2.11-0.4.3.jar"/>
-  <classpathentry kind="lib" path="/home/gcosta/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/bundles/scala-xml_2.11-1.0.2.jar"/>
   <classpathentry kind="lib" path="/home/gcosta/.ivy2/cache/org.scalanlp/breeze_2.11/jars/breeze_2.11-0.11.2.jar"/>
   <classpathentry kind="lib" path="/home/gcosta/.ivy2/cache/org.scalanlp/breeze-macros_2.11/jars/breeze-macros_2.11-0.11.2.jar"/>
   <classpathentry kind="lib" path="/home/gcosta/.ivy2/cache/com.github.fommil.netlib/core/jars/core-1.1.2.jar"/>
@@ -38,6 +37,13 @@
   <classpathentry kind="lib" path="/home/gcosta/.ivy2/cache/org.spire-math/spire_2.11/jars/spire_2.11-0.7.4.jar"/>
   <classpathentry kind="lib" path="/home/gcosta/.ivy2/cache/org.spire-math/spire-macros_2.11/jars/spire-macros_2.11-0.7.4.jar"/>
   <classpathentry kind="lib" path="/home/gcosta/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.5.jar"/>
+  <classpathentry kind="lib" path="/home/gcosta/.ivy2/cache/org.scalaj/scalaj-http_2.11/jars/scalaj-http_2.11-2.1.0.jar"/>
+  <classpathentry kind="lib" path="/home/gcosta/.ivy2/cache/org.json4s/json4s-native_2.11/jars/json4s-native_2.11-3.3.0.jar"/>
+  <classpathentry kind="lib" path="/home/gcosta/.ivy2/cache/org.json4s/json4s-core_2.11/jars/json4s-core_2.11-3.3.0.jar"/>
+  <classpathentry kind="lib" path="/home/gcosta/.ivy2/cache/org.json4s/json4s-ast_2.11/jars/json4s-ast_2.11-3.3.0.jar"/>
+  <classpathentry kind="lib" path="/home/gcosta/.ivy2/cache/org.json4s/json4s-scalap_2.11/jars/json4s-scalap_2.11-3.3.0.jar"/>
+  <classpathentry kind="lib" path="/home/gcosta/.ivy2/cache/com.thoughtworks.paranamer/paranamer/bundles/paranamer-2.8.jar"/>
+  <classpathentry kind="lib" path="/home/gcosta/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/bundles/scala-xml_2.11-1.0.5.jar"/>
   <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
   <classpathentry kind="output" path="bin"/>
 </classpath>
