@@ -12,6 +12,8 @@ object Application extends App {
   println("""WorldBank! 
             |Digite uma query:""".stripMargin)
 
+            
+            
 /*val reply =
     Http("http://api.worldbank.org/countries/br/indicators/NY.GDP.MKTP.CD")
       .param("per_page", "1000")
