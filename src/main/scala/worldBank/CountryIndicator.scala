@@ -8,6 +8,8 @@ import Helper._
 trait CountryIndicator {
 
   def getValuesByYear(country: String, indicator: String): (List[Int], List[Double]) = {
+    println(getIndicatorByCountryURL(country, indicator))
+    
     val response =
       Http(getIndicatorByCountryURL(country, indicator))
         .param("per_page", "1000")

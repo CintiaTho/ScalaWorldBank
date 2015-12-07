@@ -1,6 +1,6 @@
 package utils
 
-class Memorizer[-T, +R](f: T => R) extends (T => R) {
+class Memoize[-T, +R](f: T => R) extends (T => R) {
   import scala.collection.mutable
   private[this] val vals = mutable.Map.empty[T, R]
 
@@ -15,6 +15,6 @@ class Memorizer[-T, +R](f: T => R) extends (T => R) {
   }
 }
 
-object Memorizer {
-  def apply[T, R](f: T => R) = new Memorizer(f)
+object Memoize {
+  def apply[T, R](f: T => R) = new Memoize(f)
 }
