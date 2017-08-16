@@ -1,12 +1,28 @@
 package impl.queries
 
-import queries._
-import io.continuum.bokeh._
-import io.continuum.bokeh.Tools._
+
 import math.{ Pi => pi, sin }
 
-class BokehQueryResult(val data: List[(List[Int], List[Double])]) extends QueryResult {
+import io.continuum.bokeh._
+import io.continuum.bokeh.Tools._
 
+import queries._
+
+
+/** Classe para gerar arquivo HTML contendo o gráfico solicitado.
+ *
+ *  @param data uma List[(List[Int], List[Double])] utilizada para
+ *         passar 2-tuplas, sendo que cada tupla contem os dados de
+ *         uma curva a ser plotada.
+ */
+class BokehQueryResult(val data: List[(List[Int], List[Double])])
+  extends QueryResult {
+
+  /** Método utilizado para calcular as curvas cujos conjuntos de dados
+   *  foram passados por data; gerar o gráfico a partir dos
+   *  renderizadores das curvas; salvar o arquivo HTML; e exibir
+   *  o arquivo salvo.
+   */
   override def show() = {
 
     val xdr = new DataRange1d()
@@ -27,15 +43,28 @@ class BokehQueryResult(val data: List[(List[Int], List[Double])]) extends QueryR
 
     val document = new Document(plot)
     val html = document.save("plot.html")
-    html.view()    
+    html.view()
   }
 
+  /** Iterador de conjunto de dados para obter renderizador de cada curva.
+   */
   private def getRenderers() =
     for (item <- data) yield getRenderer(item)
 
-  
-  //TODO: Criar legenda por país
+  /** Gera o renderizador de uma curva com base nos valores por data.
+   *
+   *  @param valueByDate uma 2-tupla composta por duas listas:
+   *         uma List[Int] para indicar os valores de ano, a serem
+   *         plotados no eixo x; e
+   *         uma List[Double] para indicar os valores requisitados do
+   *         ano no eixo y.
+   *  @return instância de Renderer para gerar uma curva.
+   */
   private def getRenderer(valueByDate: (List[Int], List[Double])): Renderer = {
+
+    /** Objeto singleton para representar as coordenadas
+     *  a serem plotadas do gráfico.
+     */
     object source extends ColumnDataSource {
       val x = column(valueByDate._1.map { x => x toDouble })
       val y = column(valueByDate._2)
@@ -43,6 +72,7 @@ class BokehQueryResult(val data: List[(List[Int], List[Double])]) extends QueryR
 
     import source.{ x, y }
 
+    //TODO: Criar legenda por país
     val line = new Line().x(x).y(y).line_color(Color.Blue)
     new GlyphRenderer()
       .data_source(source)
