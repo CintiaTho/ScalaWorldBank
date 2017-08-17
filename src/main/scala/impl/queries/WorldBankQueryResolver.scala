@@ -51,7 +51,7 @@ class WorldBankQueryResolver extends QueryResolver with CountryIndicator {
       indicator <- query.indicators
     ) yield getValuesByYear(country, indicator)
 
-    new BokehQueryResult(values)
+    new BokehQueryResult(query.toString, values)
   }
 
 }

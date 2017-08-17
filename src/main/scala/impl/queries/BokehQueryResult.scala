@@ -11,11 +11,13 @@ import queries._
 
 /** Classe para gerar arquivo HTML contendo o gráfico solicitado.
  *
+ *  @param name o nome do arquivo do gráfico a ser gerado
  *  @param data uma List[(List[Int], List[Double])] utilizada para
  *         passar 2-tuplas, sendo que cada tupla contem os dados de
  *         uma curva a ser plotada.
  */
-class BokehQueryResult(val data: List[(List[Int], List[Double])])
+class BokehQueryResult(val name: String,
+                       val data: List[(List[Int], List[Double])])
   extends QueryResult {
 
   /** Método utilizado para calcular as curvas cujos conjuntos de dados
@@ -42,7 +44,7 @@ class BokehQueryResult(val data: List[(List[Int], List[Double])])
     plot.tools := List(pantool, wheelzoomtool)
 
     val document = new Document(plot)
-    val html = document.save("plot.html")
+    val html = document.save(name + ".html")
     html.view()
   }
 

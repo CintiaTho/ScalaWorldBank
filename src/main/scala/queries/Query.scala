@@ -25,4 +25,9 @@ case class PureQuery(
 case class PlotQuery(
   val countries: List[String],
   val indicators: List[String])
-    extends Query
+    extends Query {
+      /** Sobrescrita do método para geração de string da instância.
+       */
+      override def toString = countries.mkString("_") + "_" +
+                              indicators.mkString("_")
+    }
